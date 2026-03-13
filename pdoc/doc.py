@@ -335,9 +335,7 @@ class Namespace(Doc[U], metaclass=ABCMeta):
                     if parent_source:
                         src_lines = parent_source.splitlines(True)
                         doc.source = "".join(src_lines[start - 1 : end])
-                        parent_start = (
-                            self.source_lines[0] if self.source_lines else 1
-                        )
+                        parent_start = self.source_lines[0] if self.source_lines else 1
                         doc.source_lines = (
                             parent_start + start - 1,
                             parent_start + end - 1,
